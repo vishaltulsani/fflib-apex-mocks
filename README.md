@@ -1,17 +1,24 @@
-# FinancialForce ApexMocks Framework
-
+FinancialForce ApexMocks Framework
+===
 [![Build Status](https://travis-ci.org/financialforcedev/fflib-apex-mocks.svg)](https://travis-ci.org/financialforcedev/fflib-apex-mocks)
 
-ApexMocks is a mocking framework for the Force.com Apex language. 
+An Apex mocking framework for true unit testing in Salesforce, with Stub API support
 
-It derives it's inspiration from the well known Java mocking framework [Mockito](https://code.google.com/p/mockito/)
+Installation
+---
+* Via the Metadata API (recommended approach)
+	* Get or create a Salesforce org
+	* If you are using the [Force.com Ant Migration Tool](https://developer.salesforce.com/docs/atlas.en-us.daas.meta/daas/meta_development.htm)
+	then deploy the [src](/src) folder into the org
+	* Alternatively, use the button below and login to your org 
+		* <a href="https://githubsfdeploy.herokuapp.com"><img alt="Deploy to Salesforce" src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png"></a>
+		* This runs a Java application on Heroku to zip and deploy the source code into your specified org via the Metadata API
+* SFDX
+	* SFDX currently doesn't support installation of unmanaged packages
 
-<a href="https://githubsfdeploy.herokuapp.com?owner=financialforcedev&repo=fflib-apex-mocks">
-  <img alt="Deploy to Salesforce"
-       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png">
-</a>
 
-## Using ApexMocks on Force.com
+Using ApexMocks on Force.com
+---
 
 ApexMocks allows you to write tests to both verify behaviour and stub dependencies.
 
@@ -68,7 +75,8 @@ Now, stub objects can be generated dynamically at run time.
 
 You can continue to use the ApexMocks generator, if you wish, but this is no longer a prerequisite to using ApexMocks.
 
-##Generating Mock files
+Generating Mock files
+---
 
 Run the apex mocks generator from the command line.
 
@@ -88,7 +96,8 @@ Instantiate the generated classes as follows:
 		fflib_ApexMocks mocks = new fflib_ApexMocks();
 		fflib_MyList.IList mockList = new MockMyList(mocks);
 
-##Documentation
+Documentation
+---
 
 * [ApexMocks Framework Tutorial](http://code4cloud.wordpress.com/2014/05/06/apexmocks-framework-tutorial/)
 * [Simple Dependency Injection](http://code4cloud.wordpress.com/2014/05/09/simple-dependency-injection/)
